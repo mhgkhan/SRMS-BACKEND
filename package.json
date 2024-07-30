@@ -1,0 +1,19 @@
+{
+  "name": "srms-backend",
+  "version": "1.0.0",
+  "description": " A Complete backend for SRMS (student result management System)",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start":"node server.js",
+    "dev":"nodemon server.js"
+  },
+  "keywords": [
+    "\"student",
+    "result",
+    "management",
+    "system\""
+  ],
+  "author": "mhgkhan",
+  "license": "ISC"
+}
