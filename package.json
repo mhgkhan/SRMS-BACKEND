@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "node server.js",
-    "start":"node server.js",
-    "dev":"nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [
     "\"student",
@@ -15,5 +15,13 @@
     "system\""
   ],
   "author": "mhgkhan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1",
+    "multer": "^1.4.5-lts.1"
+  }
 }
