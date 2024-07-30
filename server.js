@@ -16,15 +16,17 @@ app.use(express.json())
 
 
 
-app.use("/api/", (req,res,next)=>{
+app.use("/appgh/", (req,res,next)=>{
     console.log("api triggered")
     next();
 })
 
-app.get("/api/check", (req,res)=>{
+
+
+app.get("/", (req,res)=>{
     res.status(200).json({
         success:true,
-        message:"Congrats 🎉"
+        message:"Hi this is srms 🎉"
     })
 })
 
