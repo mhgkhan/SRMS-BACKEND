@@ -2,12 +2,10 @@ import mongoose from "mongoose";
 
 const adminSchema = mongoose.Schema({
     fullname : {
-        type:String,
-        required:true
+        type:String
     },
     role :{
-        type:String,
-        required:true
+        type:String
     },
     email:{
         type:String,
@@ -25,6 +23,10 @@ const adminSchema = mongoose.Schema({
     asVerified:{
         type:Boolean,
         default:false
+    },
+    password:{
+        type:String,
+        required:true
     }
 },{
     timestamps:true
