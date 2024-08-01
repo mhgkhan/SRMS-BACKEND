@@ -9,6 +9,7 @@ class StudentAuthRouteController {
             // console.log(stdId, stdPassword)
 
             
+
             sendSuccessResponse(res, true, "user logged success", {}, 201)
 
             // return res.status(200).json({success:true, message:"hello world "})
