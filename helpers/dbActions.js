@@ -19,6 +19,7 @@ export async function checkIfValueExistsInCollection(collection, field, value) {
   } catch (error) {
     return {
       error: true,
+      message: error.message,
       success: false,
       data: null,
     };
