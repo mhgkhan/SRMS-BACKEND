@@ -1,8 +1,14 @@
 export async function checkIfValueExistsInCollection(collection, field,value) {
     try {
     
-        
-        const findData = await collection.findOne({field:value});
+        // console.log("runned")
+
+        // console.log(field, value)
+
+
+        const findData = await collection.findOne({[field]:value});
+
+        // console.log(findData)
 
         if(findData == null || findData == undefined || findData == NaN) return{
             error:false,
@@ -15,7 +21,7 @@ export async function checkIfValueExistsInCollection(collection, field,value) {
                 success:true,
                 data:findData
 
-                
+
             }
         }
 
