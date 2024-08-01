@@ -4,6 +4,8 @@ dotenv.config()
 
 
 import express from "express"
+import AdminAuthRouter from "./src/routes/admin/Auth.js";
+import StudentAuthRouter from "./src/routes/student/Auth.js";
 
 
 
@@ -20,6 +22,13 @@ app.use("/appgh/", (req,res,next)=>{
     console.log("api triggered")
     next();
 })
+
+// register routes from admin
+app.use("/appgh/auth/admin", AdminAuthRouter);
+
+// auth router for student 
+app.use("/appgh/auth/student/", StudentAuthRouter)
+
 
 
 

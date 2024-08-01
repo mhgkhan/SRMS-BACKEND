@@ -1,8 +1,8 @@
 import express from "express"
 
-const Authrouter = express.Router();
+const StudentAuthRouter = express.Router();
 
-Authrouter.post("/user/signin", async (req,res)=>{
+StudentAuthRouter.get("/signin", async (req,res)=>{
     try {
         return res.status(200).json({success:true, message:"user signed sucess"})
     } catch (error) {
@@ -12,4 +12,4 @@ Authrouter.post("/user/signin", async (req,res)=>{
 
 
 
-export default Authrouter
+export default StudentAuthRouter
