@@ -1,5 +1,9 @@
-import { checkIfValueExistsInCollection } from "../../../helpers/dbActions.js";
 import {
+  addSingleDocumentToCollection,
+  checkIfValueExistsInCollection,
+} from "../../../helpers/dbActions.js";
+import {
+    checkReciveDataValidations,
   sendErrorResponse,
   sendSuccessResponse,
 } from "../../../helpers/UtilityFunctions.js";
@@ -12,13 +16,19 @@ class StudentAuthRouteController {
       // console.log(req.body)
       // console.log(stdId, stdPassword)
 
-      const findStudent = await checkIfValueExistsInCollection(
+      const checkvalidation = checkReciveDataValidations([stdId, stdPassword])
+      console.log(checkvalidation)
+      if(!checkvalidation){
+        return sendErrorResponse(res, false, "invilid data", "Your data is not valid ", 400)
+      }
+      else{
+          const findStudent = await checkIfValueExistsInCollection(
         StudentModel,
         "stdId",
         stdId
       );
 
-      // console.log(findStudent)
+    //   console.log(findStudent);
       if (findStudent.error)
         return sendErrorResponse(
           res,
@@ -36,11 +46,34 @@ class StudentAuthRouteController {
           400
         );
 
-        if(!findStudent.success){
-            
-        }
-
-      return sendSuccessResponse(res, true, "user logged success", {}, 201);
+      if (!findStudent.success) {
+        const addingData = await addSingleDocumentToCollection(StudentModel, {
+          stdId,
+          stdPassword,
+        });
+        
+        if (addingData.success)
+            return sendSuccessResponse(
+            res,
+            true,
+            "Student Regiestered Sucessfully",
+            addingData.data,
+            201
+        );
+        if (!addingData.success)
+          return sendErrorResponse(
+            res,
+            false,
+            "Server Error",
+            addingData.message,
+            500
+        );
+    }
+}
+    
+    //   console.log("second returned")
+    //   return sendSuccessResponse(res, true, "user logged success", {}, 201);
+    
       // return res.status(200).json({success:true, message:"hello world "})
     } catch (error) {}
   };

@@ -26,6 +26,28 @@ export async function checkIfValueExistsInCollection(collection, field, value) {
   }
 }
 
+export async function addSingleDocumentToCollection(collection, obj){
+  try {
+
+    const document = new collection({
+      ...obj
+    });
+    const saving = await document.save();
+    return {
+      error:false,
+      success:true,
+      data: saving
+    }
+    
+  } catch (error) {
+    return {
+      error:true,
+      message: error.message,
+      success:false,
+      data:null
+    }
+  }
+}
 
 
 
