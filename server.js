@@ -6,6 +6,7 @@ dotenv.config()
 import express from "express"
 import AdminAuthRouter from "./src/routes/admin/Auth.js";
 import StudentAuthRouter from "./src/routes/student/Auth.js";
+import connectDB from "./src/db/Connection.js";
 
 
 
@@ -14,7 +15,8 @@ const app = express();
 app.use(express.json({limit:"20mb"}))
 
 
-
+// database connection 
+connectDB(`${process.env.MONGODB_URI}`)
 
 
 
