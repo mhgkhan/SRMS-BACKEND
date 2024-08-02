@@ -4,6 +4,9 @@ dotenv.config()
 
 
 import express from "express"
+import cors from "cors"
+
+
 import AdminAuthRouter from "./src/routes/admin/Auth.js";
 import StudentAuthRouter from "./src/routes/student/Auth.js";
 import connectDB from "./src/db/Connection.js";
@@ -12,7 +15,11 @@ import connectDB from "./src/db/Connection.js";
 
 
 const app = express();
+app.use(cors({
+    origin:`${process.env.FRONTEND_DOMAIN}`
+}))
 app.use(express.json({limit:"20mb"}))
+
 
 
 // database connection 
