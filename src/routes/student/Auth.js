@@ -3,7 +3,12 @@ import StudentAuthRouteController from "../../controllers/student/AuthController
 
 const StudentAuthRouter = express.Router();
 
-StudentAuthRouter.post("/signin", StudentAuthRouteController.handleStudentLogin)
+
+// signup 
+StudentAuthRouter.post("/signup", StudentAuthRouteController.handleStudentSignup)
+// signin 
+StudentAuthRouter.post("/signin", StudentAuthRouteController.handleStudentSignup)
+
 
 
 
