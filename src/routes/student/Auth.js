@@ -7,7 +7,7 @@ const StudentAuthRouter = express.Router();
 // signup 
 StudentAuthRouter.post("/signup", StudentAuthRouteController.handleStudentSignup)
 // signin 
-StudentAuthRouter.post("/signin", StudentAuthRouteController.handleStudentSignup)
+StudentAuthRouter.post("/signin", StudentAuthRouteController.handleStudentSignin)
 
 
 

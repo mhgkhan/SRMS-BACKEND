@@ -23,6 +23,9 @@ const studentSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    subjects:{
+        type:Array
+    }
   },
   {
     timestamps: true,
