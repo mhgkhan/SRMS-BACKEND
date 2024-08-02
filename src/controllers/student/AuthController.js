@@ -168,7 +168,7 @@ class StudentAuthRouteController {
           else {
 
             if (checkIdAsExists.data.stdPassword === stdPassword) {
-              const token = await generateStudentAccessToken({ stdId: checkIdAsExists.stdId }, process.env.STUDENT_ACCESS_TOKEN)
+              const token = await generateStudentAccessToken({ stdId: checkIdAsExists.data.stdId }, process.env.STUDENT_ACCESS_TOKEN)
               if (token.success) {
                 return sendSuccessResponse(res, true, "Logged Sucessfully", token, 200)
               }
@@ -204,6 +204,24 @@ class StudentAuthRouteController {
       );
     }
   };
+
+
+
+  static handleVerify = async (req,res) =>{
+    try { 
+      // console.log(req.user)
+      const asUserVerify = req.user?.asVerify
+      // console.log(asUserVerify)
+      if(asUserVerify){
+        sendSuccessResponse(res, true, "user verified", null, 200)
+      }
+      else{
+        sendErrorResponse(res, false, "verification", "not verified", 401)
+      }
+    } catch (error) {
+      sendErrorResponse(res, false, "serverr error", error.message, 500)
+    }
+  }
 }
 
 export default StudentAuthRouteController;
