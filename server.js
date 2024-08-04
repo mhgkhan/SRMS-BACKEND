@@ -5,11 +5,13 @@ dotenv.config()
 
 import express from "express"
 import cors from "cors"
+import path from "path"
 
 
 import AdminAuthRouter from "./src/routes/admin/Auth.js";
 import StudentAuthRouter from "./src/routes/student/Auth.js";
 import connectDB from "./src/db/Connection.js";
+import GetAdminPagesRoute from "./src/routes/admin/getpages/RoutesAdmin.js";
 
 
 
@@ -18,7 +20,17 @@ const app = express();
 app.use(cors({
     origin:`${process.env.FRONTEND_DOMAIN}`
 }))
+
 app.use(express.json({limit:"20mb"}))
+
+// connecting the static "public " folder 
+app.use(express.static(path.join(process.cwd(), "/public")))
+
+
+app.set("view engine", "ejs")
+app.set("views", "./views")
+
+
 
 
 
@@ -41,7 +53,7 @@ app.use("/appgh/auth/student/", StudentAuthRouter)
 
 
 // to get pages  fo admin portal
-app.get("/appportal/admin/", AdminAuthRouter)
+app.use("/appportal/admin/", GetAdminPagesRoute)
 
 
 

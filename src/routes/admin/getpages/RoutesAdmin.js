@@ -4,7 +4,9 @@ import { VerifyAdminToken } from "../../../../middlewares/TokenVerification.js";
 
 const GetAdminPagesRoute = express.Router();
 
-GetAdminPagesRoute.get("/",VerifyAdminToken, GetADMINPages)
+// GetAdminPagesRoute.get("/home",VerifyAdminToken, GetADMINPages.getIndexPage)
+// commented with middleware 
+GetAdminPagesRoute.get("/home", GetADMINPages.getIndexPage)
 
 
 export default GetAdminPagesRoute

@@ -55,6 +55,7 @@ export const verifyStudentToken = async (req, res, next) => {
 };
 
 export const VerifyAdminToken = async (req, res, next) => {
+  console.log("hello")
   let admin = {
     asVerify: false,
     asAdminToken: false,
