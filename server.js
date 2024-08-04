@@ -40,6 +40,11 @@ app.use("/appgh/auth/admin", AdminAuthRouter);
 app.use("/appgh/auth/student/", StudentAuthRouter)
 
 
+// to get pages  fo admin portal
+app.get("/appportal/admin/", AdminAuthRouter)
+
+
+
 
 
 app.get("/", (req,res)=>{

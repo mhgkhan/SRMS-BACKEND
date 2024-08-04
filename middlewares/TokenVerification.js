@@ -53,3 +53,45 @@ export const verifyStudentToken = async (req, res, next) => {
     next()
   }
 };
+
+
+
+export const VerifyAdminToken = async (req,res,next) =>{
+  let admin = {
+    asVerify: false,
+    asAdminToken: false,
+    token:"",
+    message:"",
+    error:false
+  }
+  try {
+
+    let token;
+
+    if(req.headers["admintoken"]){
+
+      token = req.headers["admintoken"]
+      admin.token = token
+
+      // checking if v  alue is exists or not in the databse
+      
+
+    }
+
+    else{
+      return res.redirect("/appportal/admin/login")
+    }
+
+
+
+  } catch (error) {
+    admin.asVerify = false
+    admin.asAdminToken = false
+    admin.token = null,
+    admin.message = error.message,
+    admin.error = true
+
+    req.admindata = admin
+    next()
+  }
+}
