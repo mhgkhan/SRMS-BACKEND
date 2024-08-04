@@ -12,18 +12,18 @@ const adminSchema = mongoose.Schema({
         required:true,
         unique:true
     },
-    cnic:{
-        type:String,
-        required:true,
-        unique:true
-    },
-    image :{
-        type:String
-    },
-    asVerified:{
-        type:Boolean,
-        default:false
-    },
+    // cnic:{
+    //     type:String,
+    //     required:true,
+    //     unique:true
+    // },
+    // image :{
+    //     type:String
+    // },
+    // asVerified:{
+    //     type:Boolean,
+    //     default:false
+    // },
     password:{
         type:String,
         required:true
