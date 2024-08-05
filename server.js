@@ -4,6 +4,7 @@ dotenv.config()
 
 
 import express from "express"
+import cookieParser from "cookie-parser"
 import cors from "cors"
 import path from "path"
 
@@ -20,6 +21,7 @@ const app = express();
 app.use(cors({
     origin:`${process.env.FRONTEND_DOMAIN}`
 }))
+app.use(cookieParser())
 
 app.use(express.json({limit:"20mb"}))
 
