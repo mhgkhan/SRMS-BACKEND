@@ -12,6 +12,19 @@ class GetADMINPages {
             return sendErrorResponse(res, false, "Server Error", error.message, 500)
         }
     } 
+
+
+    static getLoginPage = async (req,res) =>{
+        try {
+
+            return res.status(200).render("login",{
+                title:"Login"
+            })
+            
+        } catch (error) {
+            return sendErrorResponse(res, false, "Server Error", error.message, 500)
+        }
+    } 
 }
 
 
