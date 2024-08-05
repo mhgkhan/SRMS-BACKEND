@@ -54,7 +54,7 @@ export const verifyStudentToken = async (req, res, next) => {
   }
 };
 
-export const VerifyAdminToken = async (req, res, next) => {
+export const VerifyAdminTokenFromApi = async (req, res, next) => {
   console.log("hello")
   let admin = {
     asVerify: false,
@@ -120,3 +120,80 @@ export const VerifyAdminToken = async (req, res, next) => {
     next();
   }
 };
+
+
+export const verifyAccessAdminToken = async (req,res,next) =>{
+
+  let fromMiddleWareData = {
+    error:false,
+    message:"",
+    token:"",
+    asVerified:false
+  }
+
+  try {
+  
+    if(req.cookies.ghsrmsadmin){
+
+
+      const token = req.cookies.ghsrmsadmin;
+
+      // validating token 
+      const verifyToken = JWT.verify(token, process.env.ADMIN_ACCESS_TOKEN)
+
+      const {adminId}  = verifyToken;
+
+      // checking if this adminId is exists in the database or not 
+      const checkIfAdminExists = await checkIfValueExistsInCollection(Admin, "id", adminId)
+
+      if(checkIfAdminExists.error){
+        fromMiddleWareData.error = true
+        fromMiddleWareData.message = checkIfAdminExists.message
+        fromMiddleWareData.asVerified = false
+        req.user = fromMiddleWareData;
+        return next()
+      }
+
+      else{
+
+        if(!checkIfAdminExists.success){
+          return res.redirect("appportal/admin/login")
+        }
+
+        else{
+
+          fromMiddleWareData.userId = checkIfAdminExists.data._id
+          fromMiddleWareData.userIdFromCookie = adminId
+          fromMiddleWareData.asVerified = true
+          fromMiddleWareData.token = token
+          req.user = fromMiddleWareData
+          return next()
+        }
+
+
+
+      }
+
+
+
+
+
+
+    }
+
+    else{
+      return res.redirect("appportal/admin/login")
+    }
+
+
+
+  } catch (error) {
+    console.log(error)
+    fromMiddleWareData.error = true
+    fromMiddleWareData.message = error.message
+    fromMiddleWareData.asVerified = false
+    req.user = fromMiddleWareData
+    return next()
+    // return res.redirect("/appportal/admin/login")
+  }
+}
