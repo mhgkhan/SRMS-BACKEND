@@ -16,6 +16,7 @@ class GetADMINPages {
 
     static getLoginPage = async (req,res) =>{
         try {
+            // console.log(req)
 
             return res.status(200).render("login",{
                 title:"Login"

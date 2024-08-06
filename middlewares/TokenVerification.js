@@ -182,7 +182,7 @@ export const verifyAccessAdminToken = async (req,res,next) =>{
     }
 
     else{
-      return res.redirect("appportal/admin/login")
+      return res.redirect("/appportal/admin/login")
     }
 
 
