@@ -4,9 +4,9 @@ import { verifyAccessAdminToken } from "../../../../middlewares/TokenVerificatio
 
 const GetAdminPagesRoute = express.Router();
 
-// GetAdminPagesRoute.get("/", (req,res)=>{
-//     res.json({succes:true})
-// })
+GetAdminPagesRoute.get("/", (req,res)=>{
+    res.json({succes:true})
+})
 GetAdminPagesRoute.get("/home",verifyAccessAdminToken, GetADMINPages.getIndexPage)
 GetAdminPagesRoute.get("/login",GetADMINPages.getLoginPage)
 // commented with middleware 
