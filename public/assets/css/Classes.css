@@ -1,0 +1,32 @@
+.container{
+   width: 90%;
+   /* background: blue; */
+   margin: 0px auto !important;
+   max-width: 1800px !important;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-center-all{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.d-none{
+    display: none;
+}
+
+
+/* width properties  */
+.w-full{
+    width: 100%;
+}
