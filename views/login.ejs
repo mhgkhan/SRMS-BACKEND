@@ -12,7 +12,7 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis error rem, non laboriosam molestias repellat ullam magni. Aut, porro nobis.</p>
 
                 
-                <form action="#" method="post" class="w-full" id="loginform" >
+                <form action="/appgh/auth/admin/login/" method="post" class="w-full" id="loginform" >
 
 
                     <div class="cnic input-block">
@@ -59,7 +59,6 @@
         button = document.getElementById("submitLoginForm");
 
     button.addEventListener("click", e=>{
-        console.log(cnic, password)
         let success = false;
         if(cnic.value.length < 10){
             errMsgs[0].innerHTML = "CNIC is not valid "
@@ -85,7 +84,6 @@
         else{
             return document.getElementById("loginform").submit()
         }
-
     })
 
 

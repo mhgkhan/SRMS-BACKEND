@@ -25,6 +25,8 @@ app.use(cookieParser())
 
 app.use(express.json({limit:"20mb"}))
 
+app.use(express.urlencoded({extended:false, limit:"10mb"}))
+
 // connecting the static "public " folder 
 app.use(express.static(path.join(process.cwd(), "/public")))
 

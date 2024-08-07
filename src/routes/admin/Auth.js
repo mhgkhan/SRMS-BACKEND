@@ -1,9 +1,10 @@
 import express from "express"
-import StudentAuthRouteController from "../../controllers/student/AuthController.js";
-
+import AuthAdminHandlers from "../../controllers/admin/Auth.js";
 const AdminAuthRouter = express.Router();
 
-AdminAuthRouter.get("/signin", StudentAuthRouteController)
+// AdminAuthRouter.get("/signin", StudentAuthRouteController)
+
+AdminAuthRouter.post("/login", AuthAdminHandlers.handleLoginAdmin)
 
 
 
