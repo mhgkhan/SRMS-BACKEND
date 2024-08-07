@@ -184,3 +184,59 @@ nav ul li a:hover{
     background: blue;
     color: var(--bodybg);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:700px){
+    header{
+        height: 60px;
+        overflow-y: hidden;
+    }
+    .header-body{
+        flex-direction: column !important;
+    }
+
+    .logoandheaderbutton{
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+    
+    .header-body .header-button{
+        display: block;
+    }
+
+
+    .header-body nav {
+        width: 100% ;
+        margin-top: 2rem;
+    }
+    .header-body ul{
+        flex-direction: column;
+        width: 100%;
+    }
+    .header-body ul li{
+        width: 100%;
+    }
+    .header-body ul li a{
+        width: 100%;
+        background: blue;
+        text-align: center;
+        display: block;
+    }
+
+
+}
