@@ -326,4 +326,27 @@ input {
     text-align: center;
     display: block;
   }
+
+
+
+
+  .login,.login-links{
+    width: 95% !important;
+    margin: 1rem auto;
+  }
+
 }
+
+
+@media screen and (max-width:400px){
+  html{
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width:300px){
+  .container{
+    width: 98% !important;
+  }
+}
+
