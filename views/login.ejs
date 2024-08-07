@@ -1,7 +1,51 @@
 <%- include('components/top.ejs') %>
 
-<h1>Hello, world!</h1>
-lorem3000
+
+<main class="login-page">
+    <div class="container login-page-container">
+
+        <div class="loginpagearea flex-center-all">
+
+            <section class="login">
+
+                <h1>Login </h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis error rem, non laboriosam molestias repellat ullam magni. Aut, porro nobis.</p>
+
+                
+                <form action="#" method="post" class="w-full" >
+
+
+                    <div class="cnic input-block">
+                        <label for="cnicInput"> <i class="fa-solid fa-id-badge"></i> CNIC# </label>
+                        <input type="text" name="cnic" autocomplete="cnic" id="cnicInput" placeholder="Enter Your Cnic" required >
+                    </div>
+                    
+                    <div class="password input-block">
+                        <label for="passwordInput"> <i class="fa-solid fa-key"></i> Password</label>
+                        <input type="password" name="password" autocomplete="password" id="passwordInput" placeholder="Password" required >
+                    </div>
+
+                    <button>Login </button>
+
+                </form>
+
+            </section>
+
+            <section class="login-links">
+                <a href="#">Forget password </a>
+                <a href="#">Not Have an Account </a>
+                <a href="#">Privacy & Policy </a>
+                <a href="#">Help </a>
+
+            </section>  
+
+
+        </div>
+
+        <br><br><br>
+
+    </div>
+</main>
 
 
 <%- include('components/bottom.ejs') %>

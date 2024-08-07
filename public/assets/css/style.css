@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 
-*{
-    margin: 0;padding: 0;box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* .pt-sans-regular {
@@ -27,7 +29,7 @@
     font-weight: 700;
     font-style: italic;
   } */
-  
+
 /* 
   .titillium-web-extralight {
     font-family: "Titillium Web", sans-serif;
@@ -94,150 +96,234 @@
     font-weight: 700;
     font-style: italic;
   } */
-  
 
-:root{
-    --bodybg: #f6f1f1;
-    --paracolor:#0d0b0b;
+:root {
+  --bodybg: #f6f1f1;
+  --paracolor: #292626;
+  --sectionsBg: white;
+  --headingBlue: blue;
+  --headingRed: red;
 }
 
-.dark{
-    --bodybg: #11111f;
-    --paracolor:white;
+.dark {
+  --bodybg: #11111f;
+  --paracolor: white;
+}
+
+body {
+  background: var(--bodybg);
+  color: var(--paracolor);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+span,
+a,
+label,
+p,
+button {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+a{
+  text-decoration: none;
+}
+
+
+header {
+  background: var(--sectionsBg);
+  box-shadow: -3px -3px 12px 3px #dbd2d287;
+  /* width: 100vw; */
+  transition: height 500ms ease-in;
+}
+
+header .header-body {
+  padding: 5px 12px;
+}
+
+header .header-body .logo h1 {
+  gap: 6px;
+}
+
+.header-body .logo h1 span {
+  font-family: "Titillium Web", sans-serif !important;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--headingBlue);
+}
+
+.header-body .logo h1 span:nth-child(even) {
+  color: var(--headingRed);
+}
+
+.header-body .header-button {
+  font-size: 2rem;
+  padding: 2px 10px;
+  cursor: pointer;
+  background: var(--headingBlue);
+  color: white;
+  border-radius: 6px;
+}
+.header-body span:active {
+  transform: scale(2);
+}
+
+nav ul {
+  gap: 3px;
+  list-style: none;
+}
+
+nav ul li a {
+  padding: 10px 8px;
+  font-weight: bold;
+  border-radius: 8px;
+  color: black;
+}
+
+nav ul li a:hover {
+  background: blue;
+  color: var(--bodybg);
+}
+
+main {
+  width: 100%;
+  min-height: 90vh;
+}
+
+/* login page styling  */
+.login-page{
+  background:url('https://images.pexels.com/photos/785418/pexels-photo-785418.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center/cover;
+}
+
+
+.loginpagearea {
+  height: 100%;
+  flex-direction: column;
+}
+
+.login,.login-links {
+  width: 600px;
+  max-width: 600px;
+  box-shadow: 0px 0px 3px 3px darkblue;
+  height: auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: var(--sectionsBg);
+  margin-top: 4rem;
+  box-shadow: 0px 2px 19px 2px #d5d5df91;
+}
+
+.login h1 {
+  display: inline-block;
+  border-bottom: 3px dotted red;
+  padding: 3px 15px;
+  font-size: 2rem;
+  color: var(--headingBlue);
+}
+
+.login p {
+  padding-left: 20px;
+  color: var(--paracolor);
+  margin-top: 8px;
+}
+
+.login form {
+  margin-top: 1rem;
+}
+
+.login form label {
+  width: 100%;
+  display: block;
+  padding: 6px 0px;
+}
+
+.login form button{
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+input {
+  width: 100%;
+  height: auto;
+  padding: 5px 13px;
+  font-size: 1rem;
+  /* border-radius: 6px; */
+  border: none;
+  margin: 1rem auto;
+  outline: none;
+  border-bottom: 1px solid gray;
 }
 
 
 
 
-body{
-    background: var(--bodybg);
-    color: var(--paracolor);
+.login-links{
+  margin-top: 1rem;
 }
 
-h1,h2,h3,h4,h5{
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 700;
-    font-style: normal;
+.login-links a{
+  width: 100%;
+  text-align: center;
+  display: block;
+  font-weight: bold;
+  margin: .3rem auto;
 }
-
-span,a,lable,p,button{
-    font-family: "PT Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-
-header{
-    background: white;
-    box-shadow: -3px -3px 12px 3px #dbd2d287;
-    width: 100vw;
-    transition: height 500ms ease-in;
-}
-
-header .header-body{
-    padding: 5px 12px;
+.login-links a:hover{
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: red;
 }
 
 
-header .header-body .logo h1{
-    gap: 6px;
-}
 
-.header-body .logo h1 span{
-    font-family: "Titillium Web", sans-serif !important;
-    font-weight: 700;
-    font-style: normal;
-    color: blue;
-}
 
-.header-body .logo h1 span:nth-child(even){
-    color: red;
-}
 
-.header-body .header-button{
-    font-size: 2rem;
-    padding: 2px 10px;
-    cursor: pointer;
+
+
+
+
+@media screen and (max-width: 700px) {
+  header {
+    height: 60px;
+    overflow-y: hidden;
+  }
+  .header-body {
+    flex-direction: column !important;
+  }
+
+  .logoandheaderbutton {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  .header-body .header-button {
+    display: block;
+  }
+
+  .header-body nav {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .header-body ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  .header-body ul li {
+    width: 100%;
+  }
+  .header-body ul li a {
+    width: 100%;
     background: blue;
-    color: white;
-    border-radius: 6px;
-}
-.header-body  span:active{
-    transform: scale(2);
-}
-
-
-
-nav ul{
-    gap: 3px;
-    list-style: none;
-}
-
-nav ul li a{
-    padding: 10px 8px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-    color: black;
-}
-
-nav ul li a:hover{
-    background: blue;
-    color: var(--bodybg);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width:700px){
-    header{
-        height: 60px;
-        overflow-y: hidden;
-    }
-    .header-body{
-        flex-direction: column !important;
-    }
-
-    .logoandheaderbutton{
-        width: 100% !important;
-        justify-content: space-between !important;
-    }
-    
-    .header-body .header-button{
-        display: block;
-    }
-
-
-    .header-body nav {
-        width: 100% ;
-        margin-top: 2rem;
-    }
-    .header-body ul{
-        flex-direction: column;
-        width: 100%;
-    }
-    .header-body ul li{
-        width: 100%;
-    }
-    .header-body ul li a{
-        width: 100%;
-        background: blue;
-        text-align: center;
-        display: block;
-    }
-
-
+    text-align: center;
+    display: block;
+  }
 }
