@@ -139,7 +139,7 @@ a{
 }
 
 
-header {
+header,footer {
   background: var(--sectionsBg);
   box-shadow: -3px -3px 12px 3px #dbd2d287;
   /* width: 100vw; */
@@ -193,6 +193,14 @@ nav ul li a:hover {
   background: blue;
   color: var(--bodybg);
 }
+
+
+/* footer  */
+footer p{
+  padding: 10px;
+  text-align: center;
+}
+
 
 main {
   width: 100%;
