@@ -5,6 +5,7 @@ class AuthAdminHandlers {
         try {
 
             console.log(req.body)
+            console.log('length is ', req.headers['content-length'])
             return sendSuccessResponse(res, true, "logged success", req.body, 200)
 
         } catch (error) {
