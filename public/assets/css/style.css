@@ -267,12 +267,16 @@ input {
   font-size: 1rem;
   /* border-radius: 6px; */
   border: none;
-  margin: 1rem auto;
+  /* margin: 1rem auto; */
   outline: none;
   border-bottom: 1px solid gray;
 }
 
-
+.errmsg{
+  text-align: center;
+  color: red;
+  display: block;
+}
 
 
 .login-links{

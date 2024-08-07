@@ -12,20 +12,24 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis error rem, non laboriosam molestias repellat ullam magni. Aut, porro nobis.</p>
 
                 
-                <form action="#" method="post" class="w-full" >
+                <form action="#" method="post" class="w-full" id="loginform" >
 
 
                     <div class="cnic input-block">
                         <label for="cnicInput"> <i class="fa-solid fa-id-badge"></i> CNIC# </label>
                         <input type="text" name="cnic" autocomplete="cnic" id="cnicInput" placeholder="Enter Your Cnic" required >
+                        <small color="red" class="errmsg"></small>
                     </div>
+                    
+                    <br>
                     
                     <div class="password input-block">
                         <label for="passwordInput"> <i class="fa-solid fa-key"></i> Password</label>
                         <input type="password" name="password" autocomplete="password" id="passwordInput" placeholder="Password" required >
+                        <small color="red" class="errmsg"></small>
                     </div>
 
-                    <button>Login </button>
+                    <button id="submitLoginForm" type="button"> Login </button>
 
                 </form>
 
@@ -47,5 +51,44 @@
     </div>
 </main>
 
+<script>
+    const errMsgs = document.querySelectorAll(".errmsg");
+
+    const cnic = document.getElementById("cnicInput"),
+        password = document.getElementById("passwordInput"),
+        button = document.getElementById("submitLoginForm");
+
+    button.addEventListener("click", e=>{
+        console.log(cnic, password)
+        let success = false;
+        if(cnic.value.length < 10){
+            errMsgs[0].innerHTML = "CNIC is not valid "
+            success = false
+        }
+        else{
+            errMsgs[0].innerHTML = ""
+            success = true
+        }
+        
+        if(password.value.length<5){
+            errMsgs[1].innerHTML = "Password must be atleast 8 characters"
+            success = false
+        }
+        else{
+            errMsgs[1].innerHTML = ""
+            success = true
+        }
+
+        if(cnic.value.length<10 || password.value.length < 5){
+            return;
+        }
+        else{
+            return document.getElementById("loginform").submit()
+        }
+
+    })
+
+
+</script>
 
 <%- include('components/bottom.ejs') %>
