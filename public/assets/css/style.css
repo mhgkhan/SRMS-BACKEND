@@ -131,6 +131,7 @@ header{
     background: white;
     box-shadow: -3px -3px 12px 3px #dbd2d287;
     width: 100vw;
+    transition: height 500ms ease-in;
 }
 
 header .header-body{
@@ -161,7 +162,7 @@ header .header-body .logo h1{
     color: white;
     border-radius: 6px;
 }
-.header-body .header-button span:active{
+.header-body  span:active{
     transform: scale(2);
 }
 
