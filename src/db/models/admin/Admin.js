@@ -7,7 +7,12 @@ const adminSchema = mongoose.Schema({
     role :{
         type:String
     },
-    email:{
+    // email:{
+    //     type:String,
+    //     required:true,
+    //     unique:true
+    // },
+    cnic:{
         type:String,
         required:true,
         unique:true

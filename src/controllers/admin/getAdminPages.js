@@ -5,21 +5,22 @@ class GetADMINPages {
         try {
 
             return res.status(200).render("index",{
-                title:"GH SRMS ADMIN PORTAL"
+                title:"GH SRMS ADMIN PORTAL",
             })
             
         } catch (error) {
             return sendErrorResponse(res, false, "Server Error", error.message, 500)
         }
     } 
-
-
+    
+    
     static getLoginPage = async (req,res) =>{
         try {
             // console.log(req)
-
             return res.status(200).render("login",{
-                title:"Login"
+                title:"Login",
+                formError:"",
+                isFormErr:false
             })
             
         } catch (error) {

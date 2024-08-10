@@ -9,9 +9,14 @@
             <section class="login">
 
                 <h1>Login </h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis error rem, non laboriosam molestias repellat ullam magni. Aut, porro nobis.</p>
-
+                <p> Access your personalized dashboard by logging in with your credentials to manage and view academic results seamlessly.</p>
                 
+                <% if(isFormErr){ %>
+                    <span id="errMsg" style="width: 100%;  margin:1rem auto; background:#992a2a9a; color:white; padding:5px; display:block; border-radius:6px;">
+                        <%= formError %>
+                    </span>
+                 <% } %>
+               
                 <form action="/appgh/auth/admin/login/" method="post" class="w-full" id="loginform" >
 
 
@@ -52,11 +57,24 @@
 </main>
 
 <script>
+
+
+    window.addEventListener("load", e=>{
+        if(document.getElementById("errMsg")){
+            setTimeout(()=>{
+                document.getElementById("errMsg").style.display = "none"
+            }, 4000)
+        }
+    })
+
+
     const errMsgs = document.querySelectorAll(".errmsg");
 
     const cnic = document.getElementById("cnicInput"),
         password = document.getElementById("passwordInput"),
         button = document.getElementById("submitLoginForm");
+
+
 
     button.addEventListener("click", e=>{
         let success = false;
@@ -85,6 +103,11 @@
             return document.getElementById("loginform").submit()
         }
     })
+
+
+
+
+    
 
 
 </script>
