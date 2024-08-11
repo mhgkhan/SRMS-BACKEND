@@ -59,10 +59,10 @@ class AuthAdminHandlers {
 
                             res.cookie('ghsrmsadmin',createToken, { maxAge: 100 * 30 * 100, httpOnly: true, })
 
-                            return res.status(200).render("index",{
-                                title:"ADMIN DASHBOARD || HOME"
-                            })
-
+                            // return res.status(200).render("index",{
+                            //     title:"ADMIN DASHBOARD || HOME"
+                            // })
+                            return res.redirect("/appportal/admin/home")
                         }
                         else{
                             // return res.redirect("/appporta/admin/login/")

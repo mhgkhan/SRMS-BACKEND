@@ -193,6 +193,7 @@ nav ul li a {
 nav ul li a:hover {
   background: blue;
   color: var(--bodybg);
+  box-shadow: 0px 0px 3px darkgray;
 }
 
 
@@ -307,9 +308,12 @@ input {
 .main{
   width: 100%;
   padding: 8px;
-  box-shadow: 0px 0px 3px darkgray;
   border-radius: 10px;
   background: var(--sectionsBg);
+}
+
+.main, .sidebar{
+  box-shadow: 2px 2px 12px #beafaf;
 }
 
 .sidebar{
@@ -317,7 +321,6 @@ input {
   padding: 8px;
   display: block;
   position: relative;
-  box-shadow: 0px 0px 3px darkgray;
   border-radius: 10px;
   background: var(--sectionsBg);
   overflow: hidden;
@@ -350,6 +353,7 @@ input {
 .sidebar ul li:hover {
   background: blue;
   width: 200px;
+  box-shadow: 3px 3px 5px 0px #c6b6b6;
 }
 
 .sidebar ul li:hover .sidebar-span{
