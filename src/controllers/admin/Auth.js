@@ -57,11 +57,9 @@ class AuthAdminHandlers {
 
                             const createToken = JWT.sign(data, process.env.ADMIN_ACCESS_TOKEN)
 
-                            req.cookies.set("ghsrmsadmin",createToken,{
-                                httpOnly:true
-                            })
+                            res.cookie('ghsrmsadmin',createToken, { maxAge: 100 * 30 * 100, httpOnly: true, })
 
-                            return res.status(200).render("home",{
+                            return res.status(200).render("index",{
                                 title:"ADMIN DASHBOARD || HOME"
                             })
 

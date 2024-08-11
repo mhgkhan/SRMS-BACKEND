@@ -1,17 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title><% title %> </title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-  </head>
-  <body>
-    <%- include('components/header.ejs') %>
+<%- include('components/top.ejs') %>
 
-    <h1>Hello, world!</h1>
-    lorem3000
 
-    <script src="/assets/js/main.js"></script>
-  </body>
-</html>
+<main>
+    <div class="container home-container flex">
+      
+      <section class="sidebar">
+        <h3>Menu </h3>
+        <span class="opensidebarbuton">
+          <i class="fa-solid fa-bars"></i>
+        </span>
+
+        <ul>
+
+
+          <li><a href="#" class="flex-center-all">
+            <span class="sidebar-icon"><i class="fa-solid fa-circle-info"></i></span>
+            <span class="sidebar-span">Instruction</span>
+          </a></li>
+
+          <li><a href="#" class="flex-center-all">
+            <span class="sidebar-icon"><i class="fa-solid fa-pen-to-square"></i></span>
+            <span class="sidebar-span">Classes</span>
+          </a></li>
+
+          <li><a href="#" class="flex-center-all">
+            <span class="sidebar-icon"><i class="fa-solid fa-square-poll-vertical"></i></span>
+            <span class="sidebar-span">All Result</span>
+          </a></li>
+
+          <li><a href="#" class="flex-center-all">
+            <span class="sidebar-icon"><i class="fa-solid fa-user-graduate"></i></span>
+            <span class="sidebar-span">Std DMC</span>
+          </a></li>
+
+
+
+        </ul>
+
+
+      </section>
+
+      <section class="main">
+        this is main 
+      </section>
+
+
+
+    </div>
+</main>
+
+
+<%- include('components/bottom.ejs') %> 

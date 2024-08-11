@@ -297,10 +297,91 @@ input {
 }
 
 
+.home-container{
+  padding: 20px;
+  gap: 10px;
+  position: relative;
+}
+
+
+.main{
+  width: 100%;
+  padding: 8px;
+  box-shadow: 0px 0px 3px darkgray;
+  border-radius: 10px;
+  background: var(--sectionsBg);
+}
+
+.sidebar{
+  /* width: 300px; */
+  padding: 8px;
+  display: block;
+  position: relative;
+  box-shadow: 0px 0px 3px darkgray;
+  border-radius: 10px;
+  background: var(--sectionsBg);
+  overflow: hidden;
+}
+
+
+.sidebar ul{
+  list-style: none;
+}
+.sidebar ul li{
+  padding: 7px;
+  display: block;
+  margin: 6px 3px;
+  position: relative;
+  width: 70px;
+  border-radius: 7px;
+  transition: 500ms;
+}
+
+
+.sidebar ul li a{
+  gap: 10px;
+  justify-content: left !important;
+  position: relative;
+}
+
+.sidebar ul li:hover {
+  background: blue;
+  width: 200px;
+}
+
+.sidebar ul li:hover .sidebar-span{
+  transform: translateX(0px);
+}
+
+
+.opensidebarbuton{
+  font-size: 2rem;
+  padding: 5px;
+  border-radius: 5px;
+  background: var(--headingBlue);
+  margin: 5px auto;
+  color: white;
+  float: right;
+  display: none;
+}
+
+.sidebar-icon{
+  font-size: 2.3rem;
+  padding: 4px 6px;
+  background: blue;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
 
 
 
-
+.sidebar-span{
+  transition: 300ms;
+  transform: translateX(100px);
+  color: white;
+  font-weight: bold;
+}
 
 
 

@@ -32,7 +32,7 @@ app.use(express.static(path.join(process.cwd(), "/public")))
 
 
 app.set("view engine", "ejs")
-app.set("views", "./views")
+app.set("views", "views")
 
 
 
