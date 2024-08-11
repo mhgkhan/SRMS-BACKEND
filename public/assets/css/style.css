@@ -321,6 +321,9 @@ input {
   border-radius: 10px;
   background: var(--sectionsBg);
   overflow: hidden;
+  height: fit-content;
+  position: sticky;
+  top: 10px;
 }
 
 
