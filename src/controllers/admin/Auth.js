@@ -57,7 +57,7 @@ class AuthAdminHandlers {
 
                             const createToken = JWT.sign(data, process.env.ADMIN_ACCESS_TOKEN)
 
-                            res.cookie('ghsrmsadmin',createToken, { httpOnly: true, })
+                            res.cookie('ghsrmsadmin',createToken, { httpOnly: true })
 
                             // return res.status(200).render("index",{
                             //     title:"ADMIN DASHBOARD || HOME"
@@ -83,7 +83,7 @@ class AuthAdminHandlers {
 
 
 
-            return sendSuccessResponse(res, true, "logged success", req.body, 200)
+            // return sendSuccessResponse(res, true, "logged success", req.body, 200)
 
 
         } catch (error) {

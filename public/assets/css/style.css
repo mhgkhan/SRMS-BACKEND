@@ -391,6 +391,44 @@ input {
 }
 
 
+.infopageinnerlinks{
+  gap: 10px;
+  padding: 0px 20px;
+}
+.infopageinnerlinks a{
+  display: block;
+  width: auto;
+  padding: 8px 10px;
+  border-radius: 7px;
+  background: blue;
+  color: white;
+  font-weight: bold;
+}
+
+.instructions{
+  margin-top: 2rem;
+}
+
+.instructions h1{
+  font-size: 2rem;
+  color: red;
+}
+
+.instructions dl{
+  padding: 10px;
+}
+.instructions dt{
+  margin-top: .8rem;
+  color: blue;
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.instructions dd{
+  font-size:1.1rem;
+}
+
+
 
 @media screen and (max-width: 700px) {
   header {
